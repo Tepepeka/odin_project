@@ -20,7 +20,7 @@ def caesar(string, key)
     modify_string.each do |x|
       if (x >= "a".ord && x <= "z".ord)
         number = x + key         
-          if number > "z".ord #122p
+          if number > "z".ord #122
             new_string << ((number - 1 - "z".ord) + "a".ord).chr   
           elsif number < "a".ord #97               
             new_string << ("z".ord - ("a".ord - 1 - number)).chr
@@ -29,7 +29,7 @@ def caesar(string, key)
           end
       elsif (x >= "A".ord && x <= "Z".ord)
         number = x + key
-          if number > "Z".ord #122p
+          if number > "Z".ord #122
             new_string << ((number - 1 - "Z".ord) + "A".ord).chr
           elsif number < "A".ord #97               
             new_string << ("Z".ord - ("A".ord - 1 - number)).chr
@@ -43,10 +43,3 @@ def caesar(string, key)
   end
   return new_string.join()
 end
-
-
-puts caesar("what a stringz!", 5)
-puts caesar("what a stringz!", -5)
-puts caesar("wHat a striNgz!", 5)
-puts caesar("wHat a striNgz!", -5)
-puts caesar(4, -5)
